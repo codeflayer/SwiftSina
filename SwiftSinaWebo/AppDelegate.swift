@@ -18,9 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         //创建windows
+        let tabBarVc = LQTabBarController()
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        window?.rootViewController = UIViewController()
+        window?.rootViewController = tabBarVc
         
         window?.backgroundColor = UIColor.redColor()
         
