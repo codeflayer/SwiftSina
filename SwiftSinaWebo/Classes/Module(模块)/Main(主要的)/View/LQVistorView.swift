@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 class LQVistorView: UIView {
 
     //MARK: -构造函数
@@ -27,64 +27,103 @@ class LQVistorView: UIView {
         addSubview(iconView)
         addSubview(homeView)
         addSubview(messageLabel)
+        messageLabel.textAlignment = NSTextAlignment.Center
         addSubview(registerButton)
         addSubview(loginButton)
         
         //设置约束
-        iconView.translatesAutoresizingMaskIntoConstraints = false
-        
-        homeView.translatesAutoresizingMaskIntoConstraints = false
-        
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        registerButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
+//        iconView.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        homeView.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        registerButton.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        loginButton.translatesAutoresizingMaskIntoConstraints = false
         
         //转轮的约束
-        addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        iconView.snp_makeConstraints { (make) -> Void in
+            make.centerX.equalTo(self).offset(0)
+        }
         
-        self.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -40))
+        iconView.snp_makeConstraints { (make) -> Void in
+            make.centerY.equalTo(self).offset(0)
+        }
         
         // 小房子
         // x
-        addConstraint(NSLayoutConstraint(item: homeView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
         
-        addConstraint(NSLayoutConstraint(item: homeView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+        homeView.snp_makeConstraints { (make) -> Void in
+            make.centerX.equalTo(self).offset(0)
+        }
+        homeView.snp_makeConstraints { (make) -> Void in
+            make.centerY.equalTo(self).offset(0)
+        }
+
         
         // 消息label
         // x
-        addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        messageLabel.snp_makeConstraints { (make) -> Void in
+            make.centerX.equalTo(iconView).offset(0)
+        }
         // y
-        addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 16))
-        // width
-        addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 240))
+        messageLabel.snp_makeConstraints { (make) -> Void in
+            make.centerY.equalTo(iconView.snp_bottom).offset(10)
+        }
+//         width
+
+        messageLabel.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(250)
+        }
         
         // 注册按钮
         // 左边
-        addConstraint(NSLayoutConstraint(item: registerButton, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: messageLabel, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0))
+
+        registerButton.snp_makeConstraints { (make) -> Void in
+            make.left.equalTo(messageLabel).offset(0)
+        }
         
         // 顶部
-        addConstraint(NSLayoutConstraint(item: registerButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: messageLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 16))
+        registerButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(messageLabel.snp_bottom).offset(16)
+        }
         
         // 宽度
-        addConstraint(NSLayoutConstraint(item: registerButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 100))
+
+        registerButton.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(100)
+        }
         
         // 高度
-        addConstraint(NSLayoutConstraint(item: registerButton, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 35))
+
+        registerButton.snp_makeConstraints { (make) -> Void in
+            make.height.equalTo(35)
+        }
         
         // 登录按钮
         // 右边
-        addConstraint(NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: messageLabel, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0))
+        loginButton.snp_makeConstraints { (make) -> Void in
+            make.right.equalTo(messageLabel).offset(0)
+        }
         
         // 顶部
-        addConstraint(NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: messageLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 16))
+ 
+        loginButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(messageLabel.snp_bottom).offset(16)
+        }
         
         // 宽度
-        addConstraint(NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 100))
+        
+        loginButton.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(100)
+        }
         
         // 高度
-        addConstraint(NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 35))
+        
+        loginButton.snp_makeConstraints { (make) -> Void in
+            make.height.equalTo(35)
+        }
     }
     
     

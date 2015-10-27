@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DABEC5A4DFBC4B7BE5F1416 /* Pods_SwiftSinaWebo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAA4EE4DE30C9F560899056 /* Pods_SwiftSinaWebo.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9A04A44C1BDE4A02001EA335 /* LQTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04A44B1BDE4A02001EA335 /* LQTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A04A44E1BDE4B17001EA335 /* LQHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04A44D1BDE4B17001EA335 /* LQHomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A04A4501BDE4B2C001EA335 /* LQDisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04A44F1BDE4B2C001EA335 /* LQDisViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -15,6 +14,7 @@
 		9A04A4541BDE4B45001EA335 /* LQProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04A4531BDE4B45001EA335 /* LQProViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A04A4561BDE51C6001EA335 /* LQTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04A4551BDE51C6001EA335 /* LQTabBar.swift */; settings = {ASSET_TAGS = (); }; };
 		9A04A4581BDE525A001EA335 /* LQBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04A4571BDE525A001EA335 /* LQBaseViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9A219B761BDF668C004CC076 /* Pods_SwiftSinaWebo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A219B751BDF668C004CC076 /* Pods_SwiftSinaWebo.framework */; };
 		9ABF8D6B1BDE0AAB0026E957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF8D6A1BDE0AAB0026E957 /* AppDelegate.swift */; };
 		9ABF8D721BDE0AAB0026E957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABF8D711BDE0AAB0026E957 /* Assets.xcassets */; };
 		9ABF8D801BDE0AAB0026E957 /* SwiftSinaWeboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF8D7F1BDE0AAB0026E957 /* SwiftSinaWeboTests.swift */; };
@@ -49,6 +49,8 @@
 		9A04A4531BDE4B45001EA335 /* LQProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQProViewController.swift; sourceTree = "<group>"; };
 		9A04A4551BDE51C6001EA335 /* LQTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQTabBar.swift; sourceTree = "<group>"; };
 		9A04A4571BDE525A001EA335 /* LQBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQBaseViewController.swift; sourceTree = "<group>"; };
+		9A219B731BDF660C004CC076 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "Pods/../build/Debug-iphoneos/SnapKit.framework"; sourceTree = "<group>"; };
+		9A219B751BDF668C004CC076 /* Pods_SwiftSinaWebo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SwiftSinaWebo.framework; path = "Pods/../build/Debug-iphoneos/Pods_SwiftSinaWebo.framework"; sourceTree = "<group>"; };
 		9ABF8D671BDE0AAB0026E957 /* SwiftSinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABF8D6A1BDE0AAB0026E957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		9ABF8D711BDE0AAB0026E957 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +62,6 @@
 		9ABF8D8A1BDE0AAB0026E957 /* SwiftSinaWeboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSinaWeboUITests.swift; sourceTree = "<group>"; };
 		9ABF8D8C1BDE0AAB0026E957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AF450551BDF2C0E0005620E /* LQVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQVistorView.swift; sourceTree = "<group>"; };
-		AEAA4EE4DE30C9F560899056 /* Pods_SwiftSinaWebo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSinaWebo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DABEC5A4DFBC4B7BE5F1416 /* Pods_SwiftSinaWebo.framework in Frameworks */,
+				9A219B761BDF668C004CC076 /* Pods_SwiftSinaWebo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +102,8 @@
 		4396692FFA34871BB06BC70E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AEAA4EE4DE30C9F560899056 /* Pods_SwiftSinaWebo.framework */,
+				9A219B751BDF668C004CC076 /* Pods_SwiftSinaWebo.framework */,
+				9A219B731BDF660C004CC076 /* SnapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -683,6 +685,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = SwiftSinaWebo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.tory.SwiftSinaWebo;
@@ -696,6 +702,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = SwiftSinaWebo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.tory.SwiftSinaWebo;
