@@ -12,6 +12,7 @@ class LQTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //自定义tabBar，使用kvc给只读的tabBar赋值。
         let newTabBar = LQTabBar()
         
         newTabBar.composeButton.addTarget(self, action: "composeButtonClick", forControlEvents: UIControlEvents.TouchUpInside)
@@ -42,6 +43,10 @@ class LQTabBarController: UITabBarController {
 
     }
 
+    func composeButtonClick()
+    {
+        
+    }
 //    override func viewWillAppear(animated: Bool) {
 //        super.viewWillAppear(animated)
 //        
