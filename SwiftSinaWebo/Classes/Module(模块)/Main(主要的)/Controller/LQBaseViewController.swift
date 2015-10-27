@@ -18,7 +18,7 @@ class LQBaseViewController: UITableViewController {
     
     */
     
-    let userLogin = true
+    let userLogin = false
     
     override func loadView() {
         userLogin ? super.loadView() : setupVisitorView()
@@ -26,7 +26,8 @@ class LQBaseViewController: UITableViewController {
     
     func setupVisitorView()
     {
-        
+        view = LQVistorView()
+        view.backgroundColor = UIColor.whiteColor()
     }
 
     

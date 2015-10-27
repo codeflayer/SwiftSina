@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = tabBarVc
         
-        window?.backgroundColor = UIColor.redColor()
+//        window?.backgroundColor = UIColor.redColor()
         
         window?.makeKeyAndVisible()
         return true
