@@ -25,17 +25,17 @@ class LQTabBarController: UITabBarController {
         homeVc.view.backgroundColor = UIColor.purpleColor()
         //发现
         let disVc = LQHomeViewController()
-        self.addChildViewController(disVc, title: "首页", imageName: "tabbar_discover", selImageName: "tabbar_discover_highlighted")
+        self.addChildViewController(disVc, title: "发现", imageName: "tabbar_discover", selImageName: "tabbar_discover_highlighted")
         disVc.view.backgroundColor = UIColor .redColor()
         
         //消息
         let megVc = LQHomeViewController()
-        self.addChildViewController(megVc, title: "首页", imageName: "tabbar_message_center", selImageName: "tabbar_message_center_highlighted")
+        self.addChildViewController(megVc, title: "消息", imageName: "tabbar_message_center", selImageName: "tabbar_message_center_highlighted")
         megVc.view.backgroundColor = UIColor.blueColor()
         
         //我
         let proVc = LQHomeViewController()
-        self.addChildViewController(proVc, title: "首页", imageName: "tabbar_profile", selImageName: "tabbar_profile_highlighted")
+        self.addChildViewController(proVc, title: "我", imageName: "tabbar_profile", selImageName: "tabbar_profile_highlighted")
         proVc.view.backgroundColor = UIColor.redColor()
         
         
