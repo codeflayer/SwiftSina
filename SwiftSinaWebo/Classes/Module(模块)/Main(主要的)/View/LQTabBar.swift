@@ -25,17 +25,11 @@ class LQTabBar: UITabBar {
             // 判断 UITabBarButton 才设置frame
             // is 判断是否是某个类型
             if view is UIControl && !(view is UIButton) {
-                print("view: \(view)")
                 view.frame = CGRectOffset(frame, width * CGFloat(index), 0)
-                
-                //                index++
-                //                if index == 2 {
-                //                    index++
-                //                }
+
                 index += index == 1 ? 2 : 1
             }
         }
-        print("-------")
         
         // 设置撰写按钮frame
         composeButton.frame = CGRectOffset(frame, width * 2, 0)
