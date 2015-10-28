@@ -120,7 +120,7 @@ class LQVistorView: UIView {
         label.text = "关注一些人,看看有什么惊喜!"
         
         label.textColor = UIColor.lightGrayColor()
-        
+        //自动换行
         label.numberOfLines = 0
         
         label.sizeToFit()
