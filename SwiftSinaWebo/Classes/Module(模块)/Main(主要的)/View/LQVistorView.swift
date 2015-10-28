@@ -43,85 +43,43 @@ class LQVistorView: UIView {
 //        loginButton.translatesAutoresizingMaskIntoConstraints = false
         
         //转轮的约束
-        iconView.snp_makeConstraints { (make) -> Void in
-            make.centerX.equalTo(self).offset(0)
-        }
         
         iconView.snp_makeConstraints { (make) -> Void in
+            make.centerX.equalTo(self).offset(0)
             make.centerY.equalTo(self).offset(0)
+
         }
         
         // 小房子
-        // x
         
         homeView.snp_makeConstraints { (make) -> Void in
             make.centerX.equalTo(self).offset(0)
+             make.centerY.equalTo(self).offset(0)
         }
-        homeView.snp_makeConstraints { (make) -> Void in
-            make.centerY.equalTo(self).offset(0)
-        }
-
         
         // 消息label
-        // x
+        
         messageLabel.snp_makeConstraints { (make) -> Void in
             make.centerX.equalTo(iconView).offset(0)
-        }
-        // y
-        messageLabel.snp_makeConstraints { (make) -> Void in
             make.centerY.equalTo(iconView.snp_bottom).offset(10)
-        }
-//         width
-
-        messageLabel.snp_makeConstraints { (make) -> Void in
             make.width.equalTo(250)
         }
-        
+
         // 注册按钮
-        // 左边
 
         registerButton.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(messageLabel).offset(0)
-        }
-        
-        // 顶部
-        registerButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(messageLabel.snp_bottom).offset(16)
-        }
-        
-        // 宽度
-
-        registerButton.snp_makeConstraints { (make) -> Void in
             make.width.equalTo(100)
-        }
-        
-        // 高度
-
-        registerButton.snp_makeConstraints { (make) -> Void in
             make.height.equalTo(35)
         }
-        
+
         // 登录按钮
-        // 右边
+        
         loginButton.snp_makeConstraints { (make) -> Void in
             make.right.equalTo(messageLabel).offset(0)
-        }
-        
-        // 顶部
- 
-        loginButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(messageLabel.snp_bottom).offset(16)
-        }
-        
-        // 宽度
-        
-        loginButton.snp_makeConstraints { (make) -> Void in
             make.width.equalTo(100)
-        }
-        
-        // 高度
-        
-        loginButton.snp_makeConstraints { (make) -> Void in
             make.height.equalTo(35)
         }
     }
