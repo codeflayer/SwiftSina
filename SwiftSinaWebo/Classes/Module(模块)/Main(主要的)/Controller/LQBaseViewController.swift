@@ -27,7 +27,7 @@ class LQBaseViewController: UITableViewController {
     func setupVisitorView()
     {
         view = LQVistorView()
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.grayColor()
     }
 
     
