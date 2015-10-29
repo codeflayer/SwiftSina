@@ -52,8 +52,12 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods-SwiftSinaWebo/AFNetworking.framework'
+  install_framework 'Pods-SwiftSinaWebo/SVProgressHUD.framework'
   install_framework 'Pods-SwiftSinaWebo/SnapKit.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods-SwiftSinaWebo/AFNetworking.framework'
+  install_framework 'Pods-SwiftSinaWebo/SVProgressHUD.framework'
   install_framework 'Pods-SwiftSinaWebo/SnapKit.framework'
 fi
