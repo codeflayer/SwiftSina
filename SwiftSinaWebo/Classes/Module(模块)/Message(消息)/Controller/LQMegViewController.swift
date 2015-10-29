@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LQMegViewController: UITableViewController {
+class LQMegViewController: LQBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
