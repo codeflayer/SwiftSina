@@ -15,6 +15,9 @@
 		9A04A4561BDE51C6001EA335 /* LQTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04A4551BDE51C6001EA335 /* LQTabBar.swift */; settings = {ASSET_TAGS = (); }; };
 		9A04A4581BDE525A001EA335 /* LQBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04A4571BDE525A001EA335 /* LQBaseViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A219B761BDF668C004CC076 /* Pods_SwiftSinaWebo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A219B751BDF668C004CC076 /* Pods_SwiftSinaWebo.framework */; };
+		9A904D291BE0F07100B5EEFD /* LQOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A904D281BE0F07100B5EEFD /* LQOauthViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9A904D2B1BE0F49700B5EEFD /* LQNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A904D2A1BE0F49700B5EEFD /* LQNetworkTools.swift */; settings = {ASSET_TAGS = (); }; };
+		9AB1FE3C1BE1360A00334026 /* LQUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB1FE3B1BE1360A00334026 /* LQUserAccount.swift */; settings = {ASSET_TAGS = (); }; };
 		9ABF8D6B1BDE0AAB0026E957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF8D6A1BDE0AAB0026E957 /* AppDelegate.swift */; };
 		9ABF8D721BDE0AAB0026E957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABF8D711BDE0AAB0026E957 /* Assets.xcassets */; };
 		9ABF8D801BDE0AAB0026E957 /* SwiftSinaWeboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF8D7F1BDE0AAB0026E957 /* SwiftSinaWeboTests.swift */; };
@@ -51,6 +54,9 @@
 		9A04A4571BDE525A001EA335 /* LQBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQBaseViewController.swift; sourceTree = "<group>"; };
 		9A219B731BDF660C004CC076 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "Pods/../build/Debug-iphoneos/SnapKit.framework"; sourceTree = "<group>"; };
 		9A219B751BDF668C004CC076 /* Pods_SwiftSinaWebo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SwiftSinaWebo.framework; path = "Pods/../build/Debug-iphoneos/Pods_SwiftSinaWebo.framework"; sourceTree = "<group>"; };
+		9A904D281BE0F07100B5EEFD /* LQOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQOauthViewController.swift; sourceTree = "<group>"; };
+		9A904D2A1BE0F49700B5EEFD /* LQNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQNetworkTools.swift; sourceTree = "<group>"; };
+		9AB1FE3B1BE1360A00334026 /* LQUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQUserAccount.swift; sourceTree = "<group>"; };
 		9ABF8D671BDE0AAB0026E957 /* SwiftSinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABF8D6A1BDE0AAB0026E957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		9ABF8D711BDE0AAB0026E957 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +112,22 @@
 				9A219B731BDF660C004CC076 /* SnapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A904D261BE0F04E00B5EEFD /* Oauth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+				9A904D271BE0F04E00B5EEFD /* Controller */,
+			);
+			path = "Oauth(授权)";
+			sourceTree = "<group>";
+		};
+		9A904D271BE0F04E00B5EEFD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A904D281BE0F07100B5EEFD /* LQOauthViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		9ABF8D5E1BDE0AAB0026E957 = {
@@ -188,6 +210,7 @@
 		9ABF8D9B1BDE10640026E957 /* Model(全局模型) */ = {
 			isa = PBXGroup;
 			children = (
+				9AB1FE3B1BE1360A00334026 /* LQUserAccount.swift */,
 			);
 			path = "Model(全局模型)";
 			sourceTree = "<group>";
@@ -195,6 +218,7 @@
 		9ABF8D9C1BDE10640026E957 /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				9A904D261BE0F04E00B5EEFD /* Oauth(授权) */,
 				9ABF8DA51BDE10640026E957 /* Main(主要的) */,
 				9ABF8DA11BDE10640026E957 /* Home(首页) */,
 				9ABF8D9D1BDE10640026E957 /* Discover(发现) */,
@@ -370,6 +394,7 @@
 		9ABF8DB11BDE10640026E957 /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				9A904D2A1BE0F49700B5EEFD /* LQNetworkTools.swift */,
 			);
 			path = "Tool(工具)";
 			sourceTree = "<group>";
@@ -557,12 +582,15 @@
 				9A04A4501BDE4B2C001EA335 /* LQDisViewController.swift in Sources */,
 				9A04A4561BDE51C6001EA335 /* LQTabBar.swift in Sources */,
 				9A04A4541BDE4B45001EA335 /* LQProViewController.swift in Sources */,
+				9AB1FE3C1BE1360A00334026 /* LQUserAccount.swift in Sources */,
 				9A04A44C1BDE4A02001EA335 /* LQTabBarController.swift in Sources */,
 				9A04A4581BDE525A001EA335 /* LQBaseViewController.swift in Sources */,
+				9A904D2B1BE0F49700B5EEFD /* LQNetworkTools.swift in Sources */,
 				9ABF8D6B1BDE0AAB0026E957 /* AppDelegate.swift in Sources */,
 				9A04A44E1BDE4B17001EA335 /* LQHomeViewController.swift in Sources */,
 				9A04A4521BDE4B38001EA335 /* LQMegViewController.swift in Sources */,
 				9AF450561BDF2C0E0005620E /* LQVistorView.swift in Sources */,
+				9A904D291BE0F07100B5EEFD /* LQOauthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

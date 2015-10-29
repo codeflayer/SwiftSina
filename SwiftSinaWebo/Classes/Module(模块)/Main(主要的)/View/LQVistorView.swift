@@ -8,28 +8,54 @@
 
 import UIKit
 import SnapKit
-class LQVistorView: UIView {
 
+
+//定义协议
+protocol LQVistorViewDelegte: NSObjectProtocol {
+    
+    //注册按钮
+    func vistorViewRegistClick()
+    
+    func vistorViewLoginClick()
+}
+class LQVistorView: UIView {
+    
+    //代理
+    weak var vistorViewDelegte: LQVistorViewDelegte?
+    
+    
+    
     //MARK: -构造函数
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder: has not been implemented)")
     }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         prepareUI()
     }
-    
+    func setupVistorView(imageName: String, message: String){
+        //隐藏房子
+        homeView.hidden = true
+        
+        iconView.image = UIImage(named: imageName)
+        
+        messageLabel.text = message
+        //将遮罩移到后面
+        self.sendSubviewToBack(coverView)
+    }
     ///准备UI
     func prepareUI(){
         //添加子控件
         addSubview(iconView)
+        addSubview(coverView)
         addSubview(homeView)
         addSubview(messageLabel)
         messageLabel.textAlignment = NSTextAlignment.Center
         addSubview(registerButton)
         addSubview(loginButton)
+        // 背景颜色
+        backgroundColor = UIColor(white: 237 / 255, alpha: 1)
         
         //设置约束
 //        iconView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +74,14 @@ class LQVistorView: UIView {
             make.centerX.equalTo(self).offset(0)
             make.centerY.equalTo(self).offset(0)
 
+        }
+        //遮盖
+        
+        coverView.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(self.snp_width).offset(0)
+            make.top.equalTo(self.snp_top).offset(0)
+            make.bottom.equalTo(self.snp_bottom).offset(-180)
+            
         }
         
         // 小房子
@@ -82,9 +116,51 @@ class LQVistorView: UIView {
             make.width.equalTo(100)
             make.height.equalTo(35)
         }
+        
+       
+    }
+    //设置动画
+    func startRotationAnimation() {
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.toValue = 2 * M_PI
+        animation.duration = 20
+        animation.repeatCount = MAXFLOAT
+        
+        // 要加上这句,不然切换到其他tabBar或者退出到桌面在切回来动画就停止了
+        animation.removedOnCompletion = false
+        
+        iconView.layer.addAnimation(animation, forKey: "homeRotation")
     }
     
+    /// 暂停旋转
+    func pauseAnimation() {
+        // 记录暂停时间
+        let pauseTime = iconView.layer.convertTime(CACurrentMediaTime(), fromLayer: nil)
+        
+        // 设置动画速度为0
+        iconView.layer.speed = 0
+        
+        // 设置动画偏移时间
+        iconView.layer.timeOffset = pauseTime
+    }
     
+    /// 恢复旋转
+    func resumeAnimation() {
+        // 获取暂停时间
+        let pauseTime = iconView.layer.timeOffset
+        
+        // 设置动画速度为1
+        iconView.layer.speed = 1
+        
+        iconView.layer.timeOffset = 0
+        
+        iconView.layer.beginTime = 0
+        
+        let timeSincePause = iconView.layer.convertTime(CACurrentMediaTime(), fromLayer: nil) - pauseTime
+        
+        iconView.layer.beginTime = timeSincePause
+    }
+
     // MARK: - 懒加载
     /// 转轮
     private lazy var iconView: UIImageView = {
@@ -140,6 +216,8 @@ class LQVistorView: UIView {
         // 设置背景
         button.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
         
+        button.addTarget(self, action: "registClick", forControlEvents: UIControlEvents.TouchUpInside)
+        
         button.sizeToFit()
         
         return button
@@ -157,10 +235,35 @@ class LQVistorView: UIView {
         // 设置背景
         button.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
         
+        button.addTarget(self, action: "loginClick", forControlEvents: UIControlEvents.TouchUpInside)
         button.sizeToFit()
         
         return button
         }()
+    
+        //遮盖
+    
+    private lazy var coverView: UIImageView = {
+        let imageView = UIImageView()
+       
+        let image = UIImage(named: "visitordiscover_feed_mask_smallicon")
+        
+        imageView.image = image
+        
+        return imageView
+    }()
+    
+    //注册事件
+    func registClick() {
+        // ? 前面的变量有值才执行后面的代码,没有值就什么都不做
+        vistorViewDelegte?.vistorViewRegistClick()
+    }
+    
+    //登录事件
+    func loginClick() {
+        vistorViewDelegte?.vistorViewLoginClick()
+    }
 
+    
 
 }
