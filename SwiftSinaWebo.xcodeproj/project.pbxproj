@@ -23,6 +23,8 @@
 		9ABF8D801BDE0AAB0026E957 /* SwiftSinaWeboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF8D7F1BDE0AAB0026E957 /* SwiftSinaWeboTests.swift */; };
 		9ABF8D8B1BDE0AAB0026E957 /* SwiftSinaWeboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF8D8A1BDE0AAB0026E957 /* SwiftSinaWeboUITests.swift */; };
 		9AC122AB1BE489380066E90C /* LQNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC122AA1BE489380066E90C /* LQNewFeatureViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9AC122AD1BE4DDAA0066E90C /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC122AC1BE4DDAA0066E90C /* UIBarButtonItem+Extension.swift */; settings = {ASSET_TAGS = (); }; };
+		9AC122AF1BE4E1680066E90C /* LQHomeTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC122AE1BE4E1680066E90C /* LQHomeTitleButton.swift */; settings = {ASSET_TAGS = (); }; };
 		9AD6A1AB1BE243D3005BCDA1 /* LQWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6A1AA1BE243D3005BCDA1 /* LQWelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9AF450561BDF2C0E0005620E /* LQVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF450551BDF2C0E0005620E /* LQVistorView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		9ABF8D8A1BDE0AAB0026E957 /* SwiftSinaWeboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSinaWeboUITests.swift; sourceTree = "<group>"; };
 		9ABF8D8C1BDE0AAB0026E957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AC122AA1BE489380066E90C /* LQNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQNewFeatureViewController.swift; sourceTree = "<group>"; };
+		9AC122AC1BE4DDAA0066E90C /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		9AC122AE1BE4E1680066E90C /* LQHomeTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQHomeTitleButton.swift; sourceTree = "<group>"; };
 		9AD6A1AA1BE243D3005BCDA1 /* LQWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQWelcomeViewController.swift; sourceTree = "<group>"; };
 		9AF450551BDF2C0E0005620E /* LQVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQVistorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +204,7 @@
 		9ABF8D991BDE10640026E957 /* Extension(扩展) */ = {
 			isa = PBXGroup;
 			children = (
+				9AC122AC1BE4DDAA0066E90C /* UIBarButtonItem+Extension.swift */,
 			);
 			path = "Extension(扩展)";
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 		9ABF8DA41BDE10640026E957 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9AC122AE1BE4E1680066E90C /* LQHomeTitleButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -607,7 +613,9 @@
 				9AB1FE3C1BE1360A00334026 /* LQUserAccount.swift in Sources */,
 				9AC122AB1BE489380066E90C /* LQNewFeatureViewController.swift in Sources */,
 				9AD6A1AB1BE243D3005BCDA1 /* LQWelcomeViewController.swift in Sources */,
+				9AC122AF1BE4E1680066E90C /* LQHomeTitleButton.swift in Sources */,
 				9A04A44C1BDE4A02001EA335 /* LQTabBarController.swift in Sources */,
+				9AC122AD1BE4DDAA0066E90C /* UIBarButtonItem+Extension.swift in Sources */,
 				9A04A4581BDE525A001EA335 /* LQBaseViewController.swift in Sources */,
 				9A904D2B1BE0F49700B5EEFD /* LQNetworkTools.swift in Sources */,
 				9ABF8D6B1BDE0AAB0026E957 /* AppDelegate.swift in Sources */,
