@@ -119,6 +119,7 @@ extension LQOauthViewController: UIWebViewDelegate {
             
             account.loadUserInfo({ (error) -> () in
                 if error != nil {
+                    print("加载用户数据出错\(error)")
                     self.netError("加载数据出错")
                     return
                 }

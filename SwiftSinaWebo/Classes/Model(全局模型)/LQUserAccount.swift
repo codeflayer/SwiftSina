@@ -41,8 +41,7 @@ class LQUserAccount: NSObject ,NSCoding {
     
     //友好显示名称
     var name: String?
-    
-    //用户头像
+        //用户头像
     var avatar_large: String?
     
     // KVC 字典转模型
@@ -106,7 +105,7 @@ class LQUserAccount: NSObject ,NSCoding {
         }
         //判断有没有效，时间
         if userAccount != nil && userAccount?.expires_date?.compare(NSDate()) == NSComparisonResult.OrderedDescending {
-            print("账号有效")
+
             return userAccount
         }
         

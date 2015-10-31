@@ -45,8 +45,6 @@ class LQWelcomeViewController: UIViewController {
             //设置用户头像
             iconView.sd_setImageWithURL(NSURL(string: urlString), placeholderImage: UIImage(named: "avatar_default_big"))
         }
-        print("iconViewFram:\(iconView.frame)")
-        print("iconViewImage:\(iconView.image)")
     }
 
 
@@ -109,7 +107,6 @@ class LQWelcomeViewController: UIViewController {
                         (UIApplication.sharedApplication().delegate as! AppDelegate).switchRootController(true)
                 })
         }
-        print("iconViewFram:\(iconView.frame)")
     }
 
 }

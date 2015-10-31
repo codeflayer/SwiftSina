@@ -8,7 +8,29 @@
 
 import UIKit
 import AFNetworking
-
+// MARK: - 网络错误枚举
+enum LQNetworkError: Int {
+    case emptyToken = -1
+    case emptyUid = -2
+    
+    // 枚举里面可以有属性
+    var description: String {
+        get {
+            // 根据枚举的类型返回对应的错误
+            switch self {
+            case LQNetworkError.emptyToken:
+                return "accecc token 为空"
+            case LQNetworkError.emptyUid:
+                return "uid 为空"
+            }
+        }
+    }
+    
+    // 枚举可以定义方法
+    func error() -> NSError {
+        return NSError(domain: "cn.itcast.error.network", code: rawValue, userInfo: ["errorDescription" : description])
+    }
+}
 
 //修改继承
 class LQNetworkTools: NSObject {
@@ -74,8 +96,7 @@ class LQNetworkTools: NSObject {
         // result: 请求结果
         afnManager.POST(urlString, parameters: parameters, success: { (_, result) -> Void in
             
-//                        let data = String(data: result as! NSData, encoding: NSUTF8StringEncoding)
-//                        print("data: \(data)")
+
             
             finshed(result: result as? [String: AnyObject], error: nil)
             }) { (_, error: NSError) -> Void in
@@ -84,17 +105,20 @@ class LQNetworkTools: NSObject {
     }
     
     // MARK: - 获取用户信息
-    func loadUserInfo(finshed: (result: [String: AnyObject]?, error: NSError?) -> ()
-        ){
+    func loadUserInfo(finshed: NetworkFinishedCallback){
             
             //判断accessToken
             if LQUserAccount.loadAccount()?.access_token == nil {
-                print("没有accesstoken。")
+                let error = LQNetworkError.emptyToken.error()
+                //告诉调用者
+                finshed(result: nil, error: error)
                 return
             }
             //判断uid
             if LQUserAccount.loadAccount()?.uid == nil {
-                print("没有uid")
+                let error = LQNetworkError.emptyToken.error()
+                //告诉调用者
+                finshed(result: nil, error: error)
                 return
             }
             
