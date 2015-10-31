@@ -8,21 +8,30 @@
 
 import UIKit
 import AFNetworking
-//修改继承
-class LQNetworkTools: AFHTTPSessionManager {
 
+
+//修改继承
+class LQNetworkTools: NSObject {
     
+    // 类型别名 = typedefined
+    typealias NetworkFinishedCallback = (result: [String: AnyObject]?, error: NSError?) -> ()
+    
+    //属性
+    private var afnManager: AFHTTPSessionManager
     //创建单例
-    static let shareInstance: LQNetworkTools = {
+    static let shareInstance: LQNetworkTools = LQNetworkTools()
+        
+        override init(){
+            
         let urlString = "https://api.weibo.com/"
         
-        let tool = LQNetworkTools(baseURL: NSURL(string: urlString))
+//        let tool = LQNetworkTools(baseURL: NSURL(string: urlString))
+            afnManager = AFHTTPSessionManager(baseURL: NSURL(string: urlString))
+            
         //添加解析方式
-        tool.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        afnManager.responseSerializer.acceptableContentTypes?.insert("text/plain")
 
-        
-        return tool
-    }()
+    }
     
     // MARK: - OAtuh授权
     /// 申请应用时分配的AppKey
@@ -45,7 +54,7 @@ class LQNetworkTools: AFHTTPSessionManager {
     // 使用闭包回调
     // MARK: - 加载AccessToken
     /// 加载AccessToken
-    func loadAccessToken(code: String, finshed: (result: [String: AnyObject]?, error: NSError?) -> ()) {
+    func loadAccessToken(code: String, finshed: NetworkFinishedCallback) {
         // url
         let urlString = "oauth2/access_token"
         
@@ -63,7 +72,7 @@ class LQNetworkTools: AFHTTPSessionManager {
         // 测试返回结果类型
         //        responseSerializer = AFHTTPResponseSerializer()
         // result: 请求结果
-        POST(urlString, parameters: parameters, success: { (_, result) -> Void in
+        afnManager.POST(urlString, parameters: parameters, success: { (_, result) -> Void in
             
 //                        let data = String(data: result as! NSData, encoding: NSUTF8StringEncoding)
 //                        print("data: \(data)")
@@ -73,5 +82,62 @@ class LQNetworkTools: AFHTTPSessionManager {
                 finshed(result: nil, error: error)
         }
     }
-
+    
+    // MARK: - 获取用户信息
+    func loadUserInfo(finshed: (result: [String: AnyObject]?, error: NSError?) -> ()
+        ){
+            
+            //判断accessToken
+            if LQUserAccount.loadAccount()?.access_token == nil {
+                print("没有accesstoken。")
+                return
+            }
+            //判断uid
+            if LQUserAccount.loadAccount()?.uid == nil {
+                print("没有uid")
+                return
+            }
+            
+            //设置url
+            let urlString = "https://api.weibo.com/2/users/show.json"
+            
+            //参数
+            let parameters = [
+                //必须拆包
+                "access_token": LQUserAccount.loadAccount()!.access_token!,
+                "uid": LQUserAccount.loadAccount()!.uid!
+            ]
+            
+//           afnManager.GET(urlString, parameters: parameters, success: { (_, result) -> Void in
+//                            finshed(result: result as? [String: AnyObject], error: nil)
+//                            }) { (_, error) -> Void in
+//                                finshed(result: nil, error: error)
+//            }
+            requestGET(urlString, parameters: parameters, finshed: finshed)
+    }
+            // MARK: - 封装AFN.GET
+            func requestGET(URLString: String, parameters: AnyObject?, finshed: NetworkFinishedCallback) {
+                
+                afnManager.GET(URLString, parameters: parameters, success: { (_, result) -> Void in
+                    finshed(result: result as? [String: AnyObject], error: nil)
+                    }) { (_, error) -> Void in
+                        finshed(result: nil, error: error)
+                }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

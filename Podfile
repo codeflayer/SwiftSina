@@ -5,6 +5,7 @@ target 'SwiftSinaWebo' do
 pod 'SVProgressHUD', '~> 1.1.3'
 pod 'SnapKit', '~> 0.15.0'
 pod 'AFNetworking'
+pod 'SDWebImage', '~> 3.7.3'
 end
 
 target 'SwiftSinaWeboTests' do

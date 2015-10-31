@@ -88,7 +88,7 @@ extension LQOauthViewController: UIWebViewDelegate {
                 return false
             }
         }
-        return true
+        return false
     }
     /**
     调用网络工具类去加载加载access token
@@ -100,12 +100,12 @@ extension LQOauthViewController: UIWebViewDelegate {
             if error != nil || result == nil {
                  print("result: \(result)")
                      print("error: \(error)")
-                SVProgressHUD.showErrorWithStatus("网络不给力***", maskType: SVProgressHUDMaskType.Black)
-                
-                // 延迟关闭. dispatch_after 没有提示,可以拖oc的dispatch_after来修改
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
-                    self.close()
-                })
+//                SVProgressHUD.showErrorWithStatus("网络不给力***", maskType: SVProgressHUDMaskType.Black)
+//                
+//                // 延迟关闭. dispatch_after 没有提示,可以拖oc的dispatch_after来修改
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+//                    self.close()
+                    self.netError("网络不给力***")
                 
                 return
             }
@@ -115,9 +115,29 @@ extension LQOauthViewController: UIWebViewDelegate {
             // 保存到沙盒
             account.saveAccount()
             
+            //加载用户数据
+            
+            account.loadUserInfo({ (error) -> () in
+                if error != nil {
+                    self.netError("加载数据出错")
+                    return
+                }
+                print("account:\(LQUserAccount.loadAccount())")
+                self.close()
+                
+            })
+            
             print("account:\(account)")
             
-            SVProgressHUD.dismiss()
         }
     }
+    private func netError(message: String) {
+        SVProgressHUD.showErrorWithStatus(message, maskType: SVProgressHUDMaskType.Black)
+        
+        // 延迟关闭. dispatch_after 没有提示,可以拖oc的dispatch_after来修改
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+            self.close()
+        })
+    }
+
 }

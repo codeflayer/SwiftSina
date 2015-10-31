@@ -16,24 +16,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        print("account:\(LQUserAccount.loadAccount())")
+//        print("account:\(LQUserAccount.loadAccount())")
 //        print("account:\(account)")
 //        print("account:\(account)")
         setupAppearance()
         //创建windows
-        let tabBarVc = LQTabBarController()
+//        let tabBarVc = LQTabBarController()
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        window?.rootViewController = tabBarVc
+        window?.rootViewController = LQNewFeatureViewController()
         
 //        window?.backgroundColor = UIColor.redColor()
         
         window?.makeKeyAndVisible()
         return true
     }
-
+    private func defaultController() -> UIViewController {
+        // 判断是否登录
+        // 每次判断都需要 == nil
+        if !LQUserAccount.userLogin() {
+            return LQTabBarController()
+        }
+        
+        
+        // 判断是否是新版本
+        return isNewVersion() ? LQNewFeatureViewController() : LQWelcomeViewController()
+    }
     
+    /// 判断是否是新版本
+    private func isNewVersion() -> Bool {
+        // 获取当前的版本号
+        let versionString = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        let currentVersion = Double(versionString)!
+        print("currentVersion: \(currentVersion)")
+        
+        // 获取到之前的版本号
+        let sandboxVersionKey = "sandboxVersionKey"
+        let sandboxVersion = NSUserDefaults.standardUserDefaults().doubleForKey(sandboxVersionKey)
+        print("sandboxVersion: \(sandboxVersion)")
+        
+        // 保存当前版本号
+        NSUserDefaults.standardUserDefaults().setDouble(currentVersion, forKey: sandboxVersionKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        // 对比
+        return currentVersion > sandboxVersion
+    }
+
+    // MARK: - 切换根控制器
+    
+    /**
+    切换根控制器
+    - parameter isMain: true: 表示切换到MainViewController, false: welcome
+    */
+    func switchRootController(isMain: Bool) {
+        window?.rootViewController = isMain ? LQTabBarController() : LQWelcomeViewController()
+    }
     private func setupAppearance() {
         // 尽早设置
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()

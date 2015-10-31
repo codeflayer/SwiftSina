@@ -22,6 +22,8 @@
 		9ABF8D721BDE0AAB0026E957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABF8D711BDE0AAB0026E957 /* Assets.xcassets */; };
 		9ABF8D801BDE0AAB0026E957 /* SwiftSinaWeboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF8D7F1BDE0AAB0026E957 /* SwiftSinaWeboTests.swift */; };
 		9ABF8D8B1BDE0AAB0026E957 /* SwiftSinaWeboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF8D8A1BDE0AAB0026E957 /* SwiftSinaWeboUITests.swift */; };
+		9AC122AB1BE489380066E90C /* LQNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC122AA1BE489380066E90C /* LQNewFeatureViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9AD6A1AB1BE243D3005BCDA1 /* LQWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6A1AA1BE243D3005BCDA1 /* LQWelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9AF450561BDF2C0E0005620E /* LQVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF450551BDF2C0E0005620E /* LQVistorView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		9ABF8D861BDE0AAB0026E957 /* SwiftSinaWeboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftSinaWeboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABF8D8A1BDE0AAB0026E957 /* SwiftSinaWeboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSinaWeboUITests.swift; sourceTree = "<group>"; };
 		9ABF8D8C1BDE0AAB0026E957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AC122AA1BE489380066E90C /* LQNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQNewFeatureViewController.swift; sourceTree = "<group>"; };
+		9AD6A1AA1BE243D3005BCDA1 /* LQWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQWelcomeViewController.swift; sourceTree = "<group>"; };
 		9AF450551BDF2C0E0005620E /* LQVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQVistorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +222,7 @@
 		9ABF8D9C1BDE10640026E957 /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				9AD6A1A81BE2438E005BCDA1 /* NewFeature(新特性) */,
 				9A904D261BE0F04E00B5EEFD /* Oauth(授权) */,
 				9ABF8DA51BDE10640026E957 /* Main(主要的) */,
 				9ABF8DA11BDE10640026E957 /* Home(首页) */,
@@ -397,6 +402,23 @@
 				9A904D2A1BE0F49700B5EEFD /* LQNetworkTools.swift */,
 			);
 			path = "Tool(工具)";
+			sourceTree = "<group>";
+		};
+		9AD6A1A81BE2438E005BCDA1 /* NewFeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				9AD6A1A91BE243A9005BCDA1 /* Controller */,
+			);
+			path = "NewFeature(新特性)";
+			sourceTree = "<group>";
+		};
+		9AD6A1A91BE243A9005BCDA1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AD6A1AA1BE243D3005BCDA1 /* LQWelcomeViewController.swift */,
+				9AC122AA1BE489380066E90C /* LQNewFeatureViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,6 +605,8 @@
 				9A04A4561BDE51C6001EA335 /* LQTabBar.swift in Sources */,
 				9A04A4541BDE4B45001EA335 /* LQProViewController.swift in Sources */,
 				9AB1FE3C1BE1360A00334026 /* LQUserAccount.swift in Sources */,
+				9AC122AB1BE489380066E90C /* LQNewFeatureViewController.swift in Sources */,
+				9AD6A1AB1BE243D3005BCDA1 /* LQWelcomeViewController.swift in Sources */,
 				9A04A44C1BDE4A02001EA335 /* LQTabBarController.swift in Sources */,
 				9A04A4581BDE525A001EA335 /* LQBaseViewController.swift in Sources */,
 				9A904D2B1BE0F49700B5EEFD /* LQNetworkTools.swift in Sources */,

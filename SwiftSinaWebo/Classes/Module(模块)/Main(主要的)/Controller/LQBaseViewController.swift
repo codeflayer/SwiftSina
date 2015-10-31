@@ -17,8 +17,7 @@ class LQBaseViewController: UITableViewController {
     2.super.loadView() 创建TableView
     
     */
-    
-    let userLogin = false
+    let userLogin = LQUserAccount.userLogin()
     
     override func loadView() {
         userLogin ? super.loadView() : setupVisitorView()
