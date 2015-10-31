@@ -16,16 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-//        print("account:\(LQUserAccount.loadAccount())")
-//        print("account:\(account)")
-//        print("account:\(account)")
+
         setupAppearance()
         //创建windows
 //        let tabBarVc = LQTabBarController()
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        window?.rootViewController = LQNewFeatureViewController()
+        window?.rootViewController = defaultController()
         
 //        window?.backgroundColor = UIColor.redColor()
         
